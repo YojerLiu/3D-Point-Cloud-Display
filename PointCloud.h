@@ -11,7 +11,7 @@ struct Point {
 };
 
 class PointCloud {
-public:
+ public:
 	std::vector<Point> points{};
 
 	PointCloud(const std::string& path);

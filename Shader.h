@@ -1,6 +1,11 @@
 #pragma once
 
 #include <glad/glad.h>
+
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 #include <string>
 
 class Shader {
@@ -32,6 +37,10 @@ class Shader {
                 float value3, float value4) const {
     glUniform4f(glGetUniformLocation(ID, name.c_str()), value1, value2, value3,
                 value4);
+  }
+
+  void setMatrix4(const std::string& name, const glm::mat4& trans) {
+    glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, glm::value_ptr(trans)); 
   }
 };
 

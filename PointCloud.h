@@ -11,10 +11,16 @@ struct Point {
 };
 
 class PointCloud {
- public:
+public:
 	std::vector<Point> points{};
 
-	PointCloud(const std::string& path);
+	PointCloud() {};
+
+	PointCloud(const std::string& path) {
+		fillPoints(path);
+	}
+
+	void fillPoints(const std::string& path);
 
 	void printPoint(const std::size_t& index) {
 		if (index <= points.size() && index >= 0) {

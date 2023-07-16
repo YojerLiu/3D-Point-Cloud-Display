@@ -10,6 +10,7 @@
 #include "Camera.h"
 
 #include <iostream>
+#include <cstring>
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
@@ -27,7 +28,7 @@ bool firstMouse{true};
 float deltaTime{0.0f};
 float lastFrame{0.0f};
 
-int main() {
+int main(int argc, char* argv[]) {
   glfwInit();
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -53,9 +54,12 @@ int main() {
     return -1;
   }
 
-  // Comment or uncomment the two statements below to see different point clouds
-  PointCloud cloud{"./bun180 - Cloud.txt"};
-  // PointCloud cloud{"./point.xyz"};
+  PointCloud cloud{};
+  if (!argv[1] || strcmp(argv[1], "point.xyz") != 0) {
+    cloud.fillPoints("./bun180 - Cloud.txt");
+  } else {
+    cloud.fillPoints("./point.xyz");
+  }
 
   Shader myShader{"./vertShader.vert", "./fragShader.frag"};
 

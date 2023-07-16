@@ -9,7 +9,8 @@
 #include <cmath>
 #include <array>
 
-PointCloud::PointCloud(const std::string& path) {
+
+void PointCloud::fillPoints(const std::string& path) {
   std::vector<double> xCoords, yCoords, zCoords;
   std::ifstream inf{path};
   if (!inf) {

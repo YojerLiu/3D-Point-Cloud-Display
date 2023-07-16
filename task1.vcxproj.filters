@@ -50,18 +50,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="point.xyz">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="vertShader.vert">
-      <Filter>Source Files</Filter>
+      <Filter>Resource Files</Filter>
     </None>
     <None Include="fragShader.frag">
-      <Filter>Source Files</Filter>
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="vertShader.vert">
+      <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Text Include="bun180 - Cloud.txt">
-      <Filter>Source Files</Filter>
+      <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
 </Project>
